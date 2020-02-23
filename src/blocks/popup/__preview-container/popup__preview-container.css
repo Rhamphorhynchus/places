@@ -1,0 +1,19 @@
+  /*
+  .popup__preview-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
+    height: 80vh;
+    position: relative;
+  }
+  */
+
+  .popup__preview-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
+    max-height: 80vh;
+    position: relative;
+  }

@@ -1,0 +1,10 @@
+/*
+.popup__preview {
+    height: 100%;
+}
+*/
+
+.popup__preview {
+    max-width: 80vw;
+    max-height: 80vh;
+}
