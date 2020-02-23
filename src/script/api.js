@@ -3,7 +3,7 @@ export class Api {
         this.token = token;
         this.group = group;
         this.ip = ip;
-        this.url = `https://${this.ip}/${this.group}`;
+        this.url = `${NODE_ENV === 'development' ? 'http://' : 'https://'}${this.ip}/${this.group}`;
         this.headers = {
             authorization: this.token,
             'Content-Type': 'application/json'
