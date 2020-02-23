@@ -24,6 +24,9 @@ export class Api {
         })
         .then((result) => {
             return Promise.resolve(result);
+        })
+        .catch((error) => {
+            console.log(error);
         });
     }
 
