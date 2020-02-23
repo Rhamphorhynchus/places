@@ -1,5 +1,6 @@
-//class PopupNew extends Popup {
-class PopupNew extends PopupValidated {
+import {PopupValidated} from './popupvalidated.js';
+
+export class PopupNew extends PopupValidated {
     constructor(popup, cardList, formValidator) {
         super(popup, formValidator);
         this.cardList = cardList;

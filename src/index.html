@@ -60,11 +60,11 @@
   <div class='popup popup-preview'>
     <div class="popup__preview-container">
       <img src='https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg' alt='' class='popup__preview'>
-      <img src="./images/close.svg" alt="" class="popup__close popup__preview-close">
+      <img src="<%=require('./images/close.svg')%>" alt="Закрыть" class="popup__close popup__preview-close">
     </div>
   </div>
 
-  <script src="script/card.js"></script>
+  <!--<script src="script/card.js"></script>
   <script src="script/cardlist.js"></script>
   <script src="script/popup.js"></script>
   <script src="script/popupvalidated.js"></script>
@@ -73,7 +73,7 @@
   <script src="script/popupuser.js"></script>
   <script src="script/userinfo.js"></script>
   <script src="script/formvalidator.js"></script>
-  <script src="script/api.js"></script>
+  <script src="script/api.js"></script>-->
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>

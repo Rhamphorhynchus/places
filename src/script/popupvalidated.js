@@ -1,4 +1,6 @@
-class PopupValidated extends Popup {
+import {Popup} from './popup.js';
+
+export class PopupValidated extends Popup {
     constructor(popup, formValidator) {
         super(popup);
         this.formValidator = formValidator;
