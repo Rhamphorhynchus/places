@@ -1,3 +1,6 @@
+//import "./style.css";
+import "./../pages/index.css"
+
 (function () {
   const token = '8505cab2-eccb-4b77-b668-43fd01724287';
   const group = 'cohort7';
