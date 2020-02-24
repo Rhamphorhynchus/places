@@ -7,7 +7,7 @@ export class Api {
         this.headers = {
             authorization: this.token,
             //credentials: "include",
-            //'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
             //'Access-Control-Allow-Origin': '*',
             //'Sec-Fetch-Site': 'cross-site',
             //'Sec-Fetch-Mode': 'cors',
