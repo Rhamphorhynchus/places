@@ -26,7 +26,7 @@ export class Api {
             return Promise.resolve(result);
         })
         .catch((error) => {
-            console.log(error);
+            console.log(error + '22222');
         });
     }
 

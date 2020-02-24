@@ -1,3 +1,5 @@
+import {PopupPreview} from './popuppreview.js';
+
 export class Card {
   constructor(api) {
     this.api = api;
