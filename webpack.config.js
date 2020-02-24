@@ -19,8 +19,14 @@ module.exports = {
     module: {
         rules: [{ // тут описываются правила
             test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-            use: { loader: "babel-loader" }, // весь JS обрабатывается пакетом babel-loader
-            exclude: /node_modules/ // исключает папку node_modules        
+            use: { loader: "babel-loader",
+            query: {
+                compact: false,
+                retainLines: true,
+                //global: true
+              } }, // весь JS обрабатывается пакетом babel-loader
+            exclude: /node_modules/, // исключает папку node_modules        
+
         },
         {
             test: /\.css$/, // применять это правило только к CSS-файлам

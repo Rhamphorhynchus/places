@@ -6,13 +6,18 @@ export class Api {
         this.url = `${NODE_ENV === 'development' ? 'http://' : 'https://'}${this.ip}/${this.group}`;
         this.headers = {
             authorization: this.token,
-            'Content-Type': 'application/json'
+            //credentials: "include",
+            //'Content-Type': 'application/json',
+            //'Access-Control-Allow-Origin': '*',
+            //'Sec-Fetch-Site': 'cross-site',
+            //'Sec-Fetch-Mode': 'cors',
         };
     }
 
     _apiCall(url, method, body) {
         return fetch(url, {
             method,
+            mode: 'cors',
             headers: this.headers,
             body
         })
