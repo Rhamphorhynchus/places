@@ -1,9 +1,9 @@
 export class Api {
-    constructor(token, group, ip) {
+    constructor(token, group, host) {
         this.token = token;
         this.group = group;
-        this.ip = ip;
-        this.url = `${NODE_ENV === 'development' ? 'http://' : 'https://'}${this.ip}/${this.group}`;
+        this.host = host;
+        this.url = `${NODE_ENV === 'development' ? 'http://' : 'https://'}${this.host}/${this.group}`;
         this.headers = {
             authorization: this.token,
             //credentials: "include",
