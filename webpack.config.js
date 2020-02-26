@@ -55,21 +55,16 @@ module.exports = {
         {
             test: /\.(jpe?g|png|gif|svg)$/i,
             use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        digest: 'hex',
-                        hash: 'sha512',
-                        name: 'images/[hash].[ext]',
-                        esModule: false,
-                    },
-                },
+                {loader: 'file-loader',
+                options: {
+                digest: 'hex',
+                hash: 'sha512',
+                name: 'images/[hash].[ext]',
+                esModule: false,
+                },},
                 {
                     loader: 'image-webpack-loader',
-                    options: {
-                        esModule: false,
-                        disable: true,
-                    }
+                    options: {}
                 },
             ]
         },
