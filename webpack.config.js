@@ -42,7 +42,7 @@ module.exports = {
                     },
             ]
         },*/
-        {
+        /*{
             test: /\.(jpe?g|png|gif|svg)$/i,
             loader: 'file-loader',
             options: {
@@ -51,11 +51,47 @@ module.exports = {
               name: 'images/[hash].[ext]',
               esModule: false,
             },
+        },*/
+        {
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        digest: 'hex',
+                        hash: 'sha512',
+                        name: 'images/[hash].[ext]',
+                        esModule: false,
+                    },
+                },
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        esModule: false,
+                        disable: true,
+                    }
+                },
+            ]
         },
+        //'image-webpack-loader'
+        /*{
+            test: /\.(eot|ttf|woff|woff2)$/,
+            loader: 'file-loader?name=./vendor/[name].[ext]'
+        },*/
         {
             test: /\.(eot|ttf|woff|woff2)$/,
             loader: 'file-loader?name=./vendor/[name].[ext]'
         },
+        /*{
+            test: /\.(png|jpg|gif|ico|svg)$/,
+            use: [
+                'file-loader?name=./images/[name].[ext]',
+                {
+                    loader: 'image-webpack-loader',
+                    options: {esModule: false, disable: true,}
+                },
+            ]
+        }*/
      /*   {
             test: /\.css$/i,
             use: [
