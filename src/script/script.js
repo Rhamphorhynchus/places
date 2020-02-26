@@ -16,7 +16,7 @@ import {UserInfo} from './userinfo.js';
 (function () {
   const token = '8505cab2-eccb-4b77-b668-43fd01724287';
   const group = 'cohort7';
-  const ip = '95.216.175.5';
+  const ip = 'praktikum.tk';
 
   const initialCards = [
     {
