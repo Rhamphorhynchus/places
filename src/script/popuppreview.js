@@ -1,4 +1,6 @@
-class PopupPreview extends Popup {
+import {Popup} from './popup.js';
+
+export class PopupPreview extends Popup {
   constructor(popup, url) {
     super(popup);
     this.url = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg';

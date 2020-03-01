@@ -1,18 +1,23 @@
-class Api {
-    constructor(token, group, ip) {
+export class Api {
+    constructor(token, group, host) {
         this.token = token;
         this.group = group;
-        this.ip = ip;
-        this.url = `http://${this.ip}/${this.group}`;
+        this.host = host;
+        this.url = `${NODE_ENV === 'development' ? 'http://' : 'https://'}${this.host}/${this.group}`;
         this.headers = {
             authorization: this.token,
-            'Content-Type': 'application/json'
+            //credentials: "include",
+            'Content-Type': 'application/json',
+            //'Access-Control-Allow-Origin': '*',
+            //'Sec-Fetch-Site': 'cross-site',
+            //'Sec-Fetch-Mode': 'cors',
         };
     }
 
     _apiCall(url, method, body) {
         return fetch(url, {
             method,
+            mode: 'cors',
             headers: this.headers,
             body
         })
@@ -24,6 +29,9 @@ class Api {
         })
         .then((result) => {
             return Promise.resolve(result);
+        })
+        .catch((error) => {
+            console.log(error + '22222');
         });
     }
 
@@ -60,141 +68,4 @@ class Api {
     deleteLike(cardId) {
         return this._apiCall(`${this.url}/cards/like/${cardId}`, 'DELETE');
     }
-    
-
-    /*
-    getUserInfo() {
-        return fetch(`${this.url}/users/me`, {
-            method: 'GET',
-            headers: this.headers
-        })
-        .then(res => {
-            if (res.ok) {
-              return res.json();
-            }
-            return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then((result) => {
-            //console.log(result);
-            return Promise.resolve(result);
-        })
-    }
-    */
-
-    /*
-    setUserInfo(name, about) {
-        return fetch(`${this.url}/users/me`, {
-            method: 'PATCH',
-            headers: this.headers,
-            body: JSON.stringify({
-                name: name,
-                about: about
-            })
-        })
-        .then(res => {
-            if (res.ok) {
-              return res.json();
-            }
-            return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then((result) => {
-            //console.log(result);
-            return Promise.resolve(result);
-        })
-    }
-    */
-
-    /*
-    getCards() {
-        return fetch(`${this.url}/cards`, {
-            method: 'GET',
-            headers: this.headers
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then((result) => {
-            return Promise.resolve(result);
-        })
-    }
-    */
-
-    /*
-    saveCard(name, url) {
-        return fetch(`${this.url}/cards`, {
-          method: 'POST',
-          headers: this.headers,
-          body: JSON.stringify({
-            name: name,
-            link: url
-          })
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then((result) => {
-            return Promise.resolve(result);
-        })
-    }
-    */
-
-    /*
-    deleteCard(id) {
-        return fetch(`${this.url}/cards/${id}`, {
-            method: 'DELETE',
-            headers: this.headers
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then((result) => {
-            return Promise.resolve(result);
-        })
-    }
-    */
-
-    /*
-    saveLike(cardId) {
-        return fetch(`${this.url}/cards/like/${cardId}`, {
-            method: 'PUT',
-            headers: this.headers
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then((result) => {
-            return Promise.resolve(result);
-        })
-    }
-    */
-
-    /*
-    deleteLike(cardId) {
-        return fetch(`${this.url}/cards/like/${cardId}`, {
-            method: 'DELETE',
-            headers: this.headers
-        })
-        .then(res => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then((result) => {
-            return Promise.resolve(result);
-        })
-    }
-    */
 }

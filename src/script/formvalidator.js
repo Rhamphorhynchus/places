@@ -1,4 +1,4 @@
-class FormValidator {
+export class FormValidator {
 
   setForm(form) {
     this.form = form;

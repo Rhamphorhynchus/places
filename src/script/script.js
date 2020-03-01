@@ -1,7 +1,22 @@
+import "./../pages/index.css"
+
+import {Api} from './api.js';
+import {Card} from './card.js';
+import {CardList} from './cardlist.js';
+import {FormValidator} from './formvalidator.js';
+//import {Popup} from './popup.js';
+import {PopupNew} from './popupnew.js';
+//import {PopupPreview} from './popuppreview.js';
+import {PopupUser} from './popupuser.js';
+//import {PopupValidated} from './popupvalidated.js';
+import {UserInfo} from './userinfo.js';
+
+
+
 (function () {
   const token = '8505cab2-eccb-4b77-b668-43fd01724287';
   const group = 'cohort7';
-  const ip = '95.216.175.5';
+  const ip = 'praktikum.tk';
 
   const initialCards = [
     {
